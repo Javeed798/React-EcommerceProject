@@ -1,14 +1,32 @@
-import React from 'react'
-import { FaShoppingCart, FaUserMinus, FaUserPlus } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { useProductsContext } from '../context/products_context'
-import { useCartContext } from '../context/cart_context'
-import { useUserContext } from '../context/user_context'
+import React from 'react';
+import { FaShoppingCart, FaUserMinus, FaUserPlus } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { useProductsContext } from '../context/products_context';
+import { useCartContext } from '../context/cart_context';
+import { useUserContext } from '../context/user_context';
 
 const CartButtons = () => {
-  return <h4>cart buttons </h4>
-}
+  return (
+    <Wrapper className='cart-btn-wrapper'>
+      <Link to='/cart' className='cart-btn'>
+        {/* 1. We have to display the cart logo and then also we have  to show how many items are there in the cart soo be specific
+      and also the noOfItems in the cart must be dynamic*/}
+        Cart
+        <span className='cart-container'>
+          {/* 2 logo to display the cart here */}
+          <FaShoppingCart />
+          <span className='cart-value'>12</span>
+        </span>
+      </Link>
+      {/* 3.We need to display the login button 
+          -> we will use the ternary operator if the user is logged in we will show logout is he is logout we show login */}
+      <button type='button' className='auth-btn'>
+        Login <FaUserPlus />
+      </button>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   display: grid;
@@ -38,7 +56,7 @@ const Wrapper = styled.div`
     position: absolute;
     top: -10px;
     right: -16px;
-    background: var(--clr-primary-5);
+    background: green;
     width: 16px;
     height: 16px;
     display: flex;
@@ -62,5 +80,5 @@ const Wrapper = styled.div`
       margin-left: 5px;
     }
   }
-`
-export default CartButtons
+`;
+export default CartButtons;
