@@ -20,7 +20,8 @@ const CartButtons = () => {
         </span>
       </Link>
       {/* 3.We need to display the login button 
-          -> we will use the ternary operator if the user is logged in we will show logout is he is logout we show login */}
+          -> we will use the ternary operator if the user is logged in we will show logout is he is logout we show login and once its done go to Footer.js
+          Now work on footer.... suuuuuuuuiiii going to footer*/}
       <button type='button' className='auth-btn'>
         Login <FaUserPlus />
       </button>
